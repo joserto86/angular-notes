@@ -39,6 +39,31 @@ import { PersonasComponent } from './personas/personas.component'; //ruta del co
 })
 export class AppModule { }
 ```
+
+### Instalar paquetes node:
+
+```
+npm install [package-name] --save //instala y guarda el paquete dentro del directorio node-modules del proyecto (jquery, bootstrap ...)
+```
+
+### Añadir js, css de terceros:
+
+Para añadir los estilos de bootrap, la libreria de jquery u otras dependencias externas a nuestra aplicación de angular, hay que añadir la ruta de las mismas dentro del archivo `angular.js` de la raiz del proyecto tal que así:
+
+```
+      [...]
+      "styles": [
+        "src/styles.css",
+        "node_modules/bootstrap/dist/css/bootstrap.min.css"
+      ],
+      "scripts": [
+        "node_modules/jquery/dist/jquery.slim.min.js",
+        "node_modules/popper.js/dist/umd/popper.min.js",
+        "node_modules/bootstrap/dist/js/bootstrap.min.js"
+      ]
+      [...]
+```
+
 # ng cli
 
 - `ng generate component [component-name]` : Con este comando generaremos un nuevo componente, también se puede utilizar su forma abreviada `ng g c [component-name]` `ng g c [component-name]` -s -t` Para generar el template y las css en linea dentro del fichero .ts
