@@ -64,6 +64,10 @@ Para añadir los estilos de bootrap, la libreria de jquery u otras dependencias 
       [...]
 ```
 
+## Fundamentos de angular:
+
+- Interpolación `{{ variable }}` Se utiliza para añadir valores dinámicos en la plantilla html del componente, la interpolación también permite manejar expresiones como sumas (`{{ variable + 1}}`)
+
 # ng cli
 
 - `ng generate component [component-name]` : Con este comando generaremos un nuevo componente, también se puede utilizar su forma abreviada `ng g c [component-name]` `ng g c [component-name]` -s -t` Para generar el template y las css en linea dentro del fichero .ts
