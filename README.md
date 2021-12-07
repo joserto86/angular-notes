@@ -83,7 +83,29 @@ Para añadir los estilos de bootrap, la libreria de jquery u otras dependencias 
   }
   
   ```
+- **Two way binding:**: `[(ngModel)]=class-variable` Enlaza las variables con el fichero typescript del componente en los dos sentidos, desde la plantilla hacia la clase typescript y viceversa. Va a ser necesario incluir un nuevo módulo a nuestra aplicación angular para permitir este comportamiento.
 
+Este método combina EventBinding y PropertyBinding, de ahí el nombre Two way binding.
+
+  ```
+  import { FormsModule } from '@angular/forms';
+  @NgModule({
+    [...]
+    
+    imports: [
+      BrowserModule, 
+      FormsModule
+    ],
+    
+    [...]
+  })
+  
+  Ejemplo:
+  
+  <input type="text" class="form-control" [(ngModel)]="title" /> 
+  
+  ```
+  
 # ng cli
 
 - `ng generate component [component-name]` : Con este comando generaremos un nuevo componente, también se puede utilizar su forma abreviada `ng g c [component-name]` `ng g c [component-name]` -s -t` Para generar el template y las css en linea dentro del fichero .ts
