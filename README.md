@@ -85,7 +85,7 @@ Para añadir los estilos de bootrap, la libreria de jquery u otras dependencias 
   ```
 - **Two way binding:**: `[(ngModel)]=class-variable` Enlaza las variables con el fichero typescript del componente en los dos sentidos, desde la plantilla hacia la clase typescript y viceversa. Va a ser necesario incluir un nuevo módulo a nuestra aplicación angular para permitir este comportamiento.
 
-Este método combina EventBinding y PropertyBinding, de ahí el nombre Two way binding.
+  Este método combina EventBinding y PropertyBinding, de ahí el nombre Two way binding.
 
   ```
   import { FormsModule } from '@angular/forms';
