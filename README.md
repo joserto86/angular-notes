@@ -66,7 +66,12 @@ Para añadir los estilos de bootrap, la libreria de jquery u otras dependencias 
 
 ## Fundamentos de angular:
 
-- Interpolación `{{ variable }}` Se utiliza para añadir valores dinámicos en la plantilla html del componente, la interpolación también permite manejar expresiones como sumas (`{{ variable + 1}}`)
+- **Interpolación:** `{{ variable }}` Se utiliza para añadir valores dinámicos en la plantilla html del componente, la interpolación también permite manejar expresiones como sumas (`{{ variable + 1}}`).
+
+- **Property Binding:** `[html-attr]=class-property`: Con esta propiedad podemos cambiar el valor de atributos html de manera dinámica 
+    por ejemplo: `[disabled]="property"` y dentro de la clase del componente la propiedad "property".
+    
+- **Event Binding:** 
 
 # ng cli
 
