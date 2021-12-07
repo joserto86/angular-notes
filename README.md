@@ -71,7 +71,18 @@ Para añadir los estilos de bootrap, la libreria de jquery u otras dependencias 
 - **Property Binding:** `[html-attr]=class-property`: Con esta propiedad podemos cambiar el valor de atributos html de manera dinámica 
     por ejemplo: `[disabled]="property"` y dentro de la clase del componente la propiedad "property".
     
-- **Event Binding:** 
+- **Event Binding:** `(event)=function()` Permite esuchar eventos de los componentes html. 
+    Ejemplo
+
+  ```
+  <input type="text" class="form-control" (input)='changeTitle($event)'/>
+  {{ title }}
+  
+  changeTitle(event: Event) {
+      this.title = (<HTMLInputElement>event.target).value
+  }
+  
+  ```
 
 # ng cli
 
