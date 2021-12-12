@@ -112,6 +112,23 @@ Para añadir los estilos de bootrap, la libreria de jquery u otras dependencias 
 
 - `*ngFor="let item of items"`
 
+- `@Input()`: Permite recibir información de un componente hijo desde un componente padre.
+  
+  Ejemplo:
+  ```
+  <app-persona
+    *ngFor="let personaElement of personas; let i = index"
+    [persona] = "personaElement"
+    [indice] = "i"
+  ></app-persona>
+  
+  @Input() persona: Persona;
+  @Input() indice: number;
+  
+  ```
+
+- `@Output()`: Permite enviar información de un componente hijo hacia un componente padre.
+
 
 ## Clases:
 
@@ -128,5 +145,7 @@ export class Clase {
 - `ng generate component [component-name]` : Con este comando generaremos un nuevo componente, también se puede utilizar su forma abreviada `ng g c [component-name]` `ng g c [component-name]` -s -t` Para generar el template y las css en linea dentro del fichero .ts
 
 
+# Otros:
 
+`"strictPropertyInitialization": false`: Añadiendo esta propiedad al archivo tsconfig.json de la raiz del proyecto deja de ser necesaria la inicialización de nuestras variables.
 
