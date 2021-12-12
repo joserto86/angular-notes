@@ -64,6 +64,18 @@ Para añadir los estilos de bootrap, la libreria de jquery u otras dependencias 
       [...]
 ```
 
+### Local Reference:
+
+```
+<input type="text" name="name" id="name" #nameInput/>   
+<input type="text" name="surname" id="surname" #surnameInput/>
+<button type="submit" (click)="addPerson(nameInput, surnameInput)">Agregar</button>
+
+addPerson(nameInput:HTMLInputElement, surnameInput:HTMLInputElement) {
+    let person = new Persona(nameInput.value, surnameInput.value);
+}
+```
+
 ## Fundamentos de angular:
 
 - **Interpolación:** `{{ variable }}` Se utiliza para añadir valores dinámicos en la plantilla html del componente, la interpolación también permite manejar expresiones como sumas (`{{ variable + 1}}`).
