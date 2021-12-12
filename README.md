@@ -129,6 +129,26 @@ Para añadir los estilos de bootrap, la libreria de jquery u otras dependencias 
 
 - `@Output()`: Permite enviar información de un componente hijo hacia un componente padre.
 
+  Ejemplo
+  ```
+  
+  @Output() personaCreated = new EventEmitter<Persona>();
+  
+  addPerson(
+    person = new Person( ... );
+    this.personaCreated.emit(person); //con el método emit se emite hacia el padre el elemento
+  )
+  
+  <app-formulario
+        (personaCreated)="personaAdded($event)" //el método `personaAdded($event)` debe declararse en el componente padre y captura el objeto dentro del evento.
+  ></app-formulario>
+  
+  personaAdded(person: Persona) {
+    this.personas.push(person);
+  }
+
+  ```
+
 
 ## Clases:
 
