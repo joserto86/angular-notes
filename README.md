@@ -75,6 +75,18 @@ addPerson(nameInput:HTMLInputElement, surnameInput:HTMLInputElement) {
     let person = new Persona(nameInput.value, surnameInput.value);
 }
 ```
+### View Child
+
+El concepto es similar a **LocalReference** salvo por la utilización del decorador `@ViewChild('nameInput')` que hace referencia al input de Html y que el tipo de la variable local declarada dentro de la clase typescript es de tipo `ElementRef`. Posteriormente será necesario acceder al atributo `nativeElement` de la variable para acceder a su información.
+```
+@ViewChild('nameInput') nameInput: ElementRef;
+@ViewChild('surnameInput') surnameInput: ElementRef; 
+
+addPerson() {
+  let person = new Persona(this.nameInput.nativeElement.value, this.surnameInput.nativeElement.value);
+}
+```
+
 
 ## Fundamentos de angular:
 
