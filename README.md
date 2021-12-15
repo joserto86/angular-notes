@@ -183,6 +183,41 @@ export class Clase {
   constructor(public varA: string, public varB: string){}
 }
 ```
+
+## Interfaces:
+
+- `OnInit`: Esta interfaz utiliza el método `ngOnInit():void` el cual se ejecuta justo después del constructor de la clase.
+
+## Servicios:
+
+Los servicios son clases que se utilizan mediante inyección de dependencias para compartir rutinas entre componentes. Para utilizarlos se introduce el concepto de `providers`:
+
+```
+@Component({
+  selector: 'custom-component',
+  templateUrl: './custom.component.html',
+  styleUrls: ['./custom.component.css'],
+  providers: [CustomService]
+})
+
+export class CustomComponent {
+  constructor(private customService: CustomService ){}
+}
+```
+Para no tener que definir el servicio en cada uno de los componentes se puede definir las clase del servicio dentro de los providers del modulo.
+
+```
+@NgModule({
+    [...]
+    
+    providers: [
+      CustomService
+    ],
+    
+    [...]
+  })
+```
+Para inyectar un servicio dentro de otro utilizamos el decorador `@Injectable()`. Este decorador se definirá en el servicicio alque se le inyecta el otro servicio.
   
 # ng cli
 
