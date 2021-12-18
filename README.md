@@ -218,6 +218,14 @@ Para no tener que definir el servicio en cada uno de los componentes se puede de
   })
 ```
 Para inyectar un servicio dentro de otro utilizamos el decorador `@Injectable()`. Este decorador se definirá en el servicicio alque se le inyecta el otro servicio.
+
+## Pipes:
+
+Estos son algunos pipes por defecto:
+
+- **currency**: A este pipe se le puede añadir también el tipo de moneda, y el formato de número a mostrar.
+- **date**
+- **percent**
   
 # ng cli
 
