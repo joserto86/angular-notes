@@ -243,6 +243,8 @@ Estos son algunos pipes por defecto:
 
 - `ng generate component [component-name]` : Con este comando generaremos un nuevo componente, también se puede utilizar su forma abreviada `ng g c [component-name]` `ng g c [component-name]` -s -t` Para generar el template y las css en linea dentro del fichero .ts
 
+- `ng generate module [module-name]`: Con este otro generaremos un nuevo módulo, también se puede utilizar su forma abreviada como el anterior `(ng g m [component-name])` 
+
 
 # Otros:
 
