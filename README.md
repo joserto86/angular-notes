@@ -136,6 +136,18 @@ addPerson() {
 
 - `*ngFor="let item of items"`
 
+- `[ngClass]="{className: typescriptVariable === 'value'}"`: Ejemplo para añadir una clase dependiendo de una condición.
+
+- `ngForm`: Útil para el manejo de formularios: 
+   Ejemplo de validación de formulario desde el template:
+   ```
+   <form (ngSubmit)="form.form.valid && method()" #form="ngForm">
+    <input name="first" required/>
+    <input name="second" required/>
+   </form>
+   ```
+   Valida que los campos con el atributo `required` estén cumplimentados.
+
 - `@Input()`: Permite recibir información de un componente hijo desde un componente padre.
   
   Ejemplo:
