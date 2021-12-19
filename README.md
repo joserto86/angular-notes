@@ -249,7 +249,10 @@ import { RouterModule } from '@angular/router';
   imports: [  
     RouterModule.forRoot([
       { path: 'welcome', component: WelcomeComponent },
-      { path: 'page', component: PageComponent' },
+      { path: 'page', component: PageComponent', children: [ //children introduce el concepto de ChildRouting
+        {path: 'contact', component: PageComponent'}
+      ]},
+      {{path: '**', component: NotFoundComponent'}} // la ruta '**' se añade al final y se utiliza como comodín, para cuando no se encuentra el recurso, es como un 404
     ]),
     ...
   ]
@@ -275,14 +278,17 @@ export CustoClass implements OnInit{
   
   ngOnInit() {
     let id = this.route.snapshot.params['id'] // y de esta manera obtener el valor del parametro "id" de nuestra ruta.
+    let mode = this.route.snapshot.queryParams['mode']; //obtenmos la variable mode dentro de los queryParams.
   }
 
 ```
 
-También podemos utilizar el concepto de routing directamente en nuestros templates de las siguiente forma utilizando propertyBinding y especificando la ruta en la que también se pueden incluir parámetros:
+También podemos utilizar el concepto de routing directamente en nuestros templates de las siguiente forma utilizando propertyBinding y especificando la ruta en la que también se pueden incluir parámetros y queryParams:
 
 ```
-<a [routerLink]="['/route', param]">navigate</a> // 
+<a [routerLink]="['/route', param]"
+  [queryParams]="{mode:'1'}"
+>navigate</a> //
 ```
 
     
