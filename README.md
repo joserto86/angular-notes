@@ -290,7 +290,49 @@ También podemos utilizar el concepto de routing directamente en nuestros templa
   [queryParams]="{mode:'1'}"
 >navigate</a> //
 ```
+## Http Requests:
 
+Para realizar peticions http se hace uso de la clase `HttpClient`. Será necesario también añadir el módulo `HttpClientModule` dentro de `app.module.ts` para su correcto funcionamiento:
+
+```
+import { HttpClientModule } from '@angular/common/http';
+
+@NgModule({
+  
+  imports: [
+    HttpClientModule
+  ],
+});
+```
+
+```
+import { HttpClient } from '@angular/common/http';
+
+@Injectable()
+export class DataService {
+
+    constructor(private httpClient: HttpClient) {}
+    
+```
+
+- `subscribe`: Las peticiones devuelven objetos de tipo `Observable` por ello es necesario hacer uso del método subscribe y declarar un tipo de función anónima para procesar la información adaptándola a nuestro modelo de datos de la aplicación.
+
+  ```
+  Ejemplo Get:
+  this.httpClient.get(url).subscribe(
+    (personas: Persona[]) => {
+      this.personas = personas;
+      this.personasService.setPersonas(personas)
+    }
+  );
+  
+  Ejemplo Put/Post:
+  this.httpClient.put(url, data).subscribe(
+    response => { //do something }, 
+    error => { //show error }
+  );
+  ```
+  
     
   
 # ng cli
