@@ -238,6 +238,54 @@ Estos son algunos pipes por defecto:
 - **currency**: A este pipe se le puede añadir también el tipo de moneda, y el formato de número a mostrar.
 - **date**
 - **percent**
+
+## Routing en angular:
+
+```
+import { RouterModule } from '@angular/router';
+
+@NgModule({
+  ....
+  imports: [  
+    RouterModule.forRoot([
+      { path: 'welcome', component: WelcomeComponent },
+      { path: 'page', component: PageComponent' },
+    ]),
+    ...
+  ]
+  ...
+]
+
+<router-outlet></router-outlet>
+```
+Al añadir el componente `<router-outlet>` la aplicación cargará el component especificado por el array de rutas dentro del decorador del módulo.
+Para navegar entre diferentes rutas dentro de la aplicación utilizaremos el servicio de `Router` como sigue:
+
+```
+import { Router, ActivatedRoute } from '@angular/router'
+export CustoClass implements OnInit{
+
+  constructor(private router: Router, 
+              private route: ActivatedRoute // Con este servicio podemos acceder a la información de la ruta actual del navegador 
+  ) {}
+
+  method() {
+    this.router.navigate(['custom/route']);
+  }
+  
+  ngOnInit() {
+    let id = this.route.snapshot.params['id'] // y de esta manera obtener el valor del parametro "id" de nuestra ruta.
+  }
+
+```
+
+También podemos utilizar el concepto de routing directamente en nuestros templates de las siguiente forma utilizando propertyBinding y especificando la ruta en la que también se pueden incluir parámetros:
+
+```
+<a [routerLink]="['/route', param]">navigate</a> // 
+```
+
+    
   
 # ng cli
 
