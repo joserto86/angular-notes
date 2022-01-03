@@ -332,7 +332,34 @@ export class DataService {
     error => { //show error }
   );
   ```
-  
+## Guards
+
+Se utilizan para limitar el acceso a determinadas rutas de nuestra aplicación que dependan de autenticación previa, con estas clases que implementan la interfaz `CanActivate` podemos gestionar si se tiene o no permiso para acceder a según que rutas
+
+```
+import { ActivatedRouteSnapshot, CanActivate, Router, RouterStateSnapshot, UrlTree } from "@angular/router";
+[...]
+
+@Injectable()
+export class LoginGuard implements CanActivate
+{
+    constructor(private loginService: LoginService,
+                private router: Router) {}
+    
+    canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean | UrlTree | Observable<boolean | UrlTree> | Promise<boolean | UrlTree> {
+        if (this.loginService.isAuthenticated) {
+            return true;
+        } else {
+            this.router.navigate(['login']);
+            return false;
+        }
+    }
+}
+```
+```
+{path: '', component: PeopleComponent, canActivate:[LoginGuard]},
+{path: 'personas', component: PeopleComponent, canActivate:[LoginGuard], children: [...
+```
     
   
 # ng cli
