@@ -252,7 +252,8 @@ import { RouterModule } from '@angular/router';
       { path: 'page', component: PageComponent', children: [ //children introduce el concepto de ChildRouting
         {path: 'contact', component: PageComponent'}
       ]},
-      {{path: '**', component: NotFoundComponent'}} // la ruta '**' se añade al final y se utiliza como comodín, para cuando no se encuentra el recurso, es como un 404
+      { path: '**', component: NotFoundComponent' } // la ruta '**' se añade al final y se utiliza como comodín, para cuando no se encuentra el recurso, es como un 404
+      { path: '**' redirectTo: '/', pathMatch: 'full' } //sirve para redireccionar a en caso de que la ruta no sea válida
     ]),
     ...
   ]
