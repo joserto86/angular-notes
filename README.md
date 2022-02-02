@@ -253,7 +253,6 @@ import { RouterModule } from '@angular/router';
         {path: 'contact', component: PageComponent'}
       ]},
       { path: '**', component: NotFoundComponent' } // la ruta '**' se añade al final y se utiliza como comodín, para cuando no se encuentra el recurso, es como un 404
-      { path: '**' redirectTo: '/', pathMatch: 'full' } //sirve para redireccionar a en caso de que la ruta no sea válida
     ]),
     ...
   ]
@@ -262,6 +261,19 @@ import { RouterModule } from '@angular/router';
 
 <router-outlet></router-outlet>
 ```
+
+```
+**lazy loading / routing hacia otro módulo**
+
+const routes: Routes = [
+  { path: '', component: InitComponent },
+  { path: 'user', loadChildren: () => import('./components/user/user.module')
+                    .then(m => m.UserModule) }, //lazy loading 
+   { path: '**' redirectTo: '/', pathMatch: 'full' } //sirve para redireccionar a en caso de que la ruta no sea válida
+
+];
+```
+
 Al añadir el componente `<router-outlet>` la aplicación cargará el component especificado por el array de rutas dentro del decorador del módulo.
 Para navegar entre diferentes rutas dentro de la aplicación utilizaremos el servicio de `Router` como sigue:
 
