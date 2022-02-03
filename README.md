@@ -375,10 +375,12 @@ export class LoginGuard implements CanActivate
 ```
 ## localStorage
 
-Para almacenar información en el localStorage podemos utilizar el objecto `localStorage` de la siguiente manera:
+Para almacenar/eliminar información en el localStorage podemos utilizar el objecto `localStorage` de la siguiente manera:
 
 ```
 localStorage.setItem('user', JSON.stringify(localUser));
+localStorage.removeItem('user'); //eliminar objeto del localStorage
+
 ```
   
 # ng cli
