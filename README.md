@@ -373,7 +373,13 @@ export class LoginGuard implements CanActivate
 {path: '', component: PeopleComponent, canActivate:[LoginGuard]},
 {path: 'personas', component: PeopleComponent, canActivate:[LoginGuard], children: [...
 ```
-    
+## localStorage
+
+Para almacenar información en el localStorage podemos utilizar el objecto `localStorage` de la siguiente manera:
+
+```
+localStorage.setItem('user', JSON.stringify(localUser));
+```
   
 # ng cli
 
