@@ -199,6 +199,7 @@ export class Clase {
 ## Interfaces:
 
 - `OnInit`: Esta interfaz utiliza el método `ngOnInit():void` el cual se ejecuta justo después del constructor de la clase.
+- `OnDestroy`: Esta interfaz utiliza el método `ngOnDestroy:void` el cual se ejecuta cuand el componente se elimina. 
 
 ## Servicios:
 
